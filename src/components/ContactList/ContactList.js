@@ -8,7 +8,6 @@ const ContactList = ({ contacts, onDeleteContact }) => (
     {contacts.map(({ id, name, number }) => (
       <li className={styles.contactListItem} key={id}>
         <ContactItem
-        id={id}
           name={name}
           number={number}
           onDeleteContact={()=>onDeleteContact(id)}
@@ -18,9 +17,7 @@ const ContactList = ({ contacts, onDeleteContact }) => (
   </ul>
 );
 ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string.isRequired }),
-  ).isRequired,
+  contacts: PropTypes.array.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
 };
 export default ContactList;
